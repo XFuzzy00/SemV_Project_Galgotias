@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PredictATrade</title>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}"/>
+</head>
+<body>
+    {% block content %}
+    <div class="main-container">
+        <header>
+            <h1 id="logo">PredictATrade</h1>
+            <ul id="navigation">
+                <li id="curr">Home</li>
+                <li><a href="{% url 'stocks_render' %}" id="list-item">Stocks</a></li>
+                <li><a href="{% url 'about_us_render' %}" id="list-item">About Us</a></li>
+                <li><button class="cta"><a href="{% url 'hire_a_broker' %}">Hire A Broker</a></button></li>
+                </ul>
+        </header>
+        <h1 class="heading1">Cryptocurrencies</h1>
+        <h6 class="sub-heading">Pricing data is updated frequently. Currency in USD ($).</h6>
+
+        <div class="grid-container">
+            <div class="grid-item">Name</div>
+            <div class="grid-item">Symbol</div>
+            <div class="grid-item">Price</div>
+            <div class="grid-item">Change</div>
+            <div class="grid-item">Percentage Change</div>
+        </div>
+
+        <div class="stock-grid">
+            <div class="stock-data">{{ name1 }}</div>
+            <div class="stock-data">{{ Symbol1 }}</div>
+            <div class="stock-data">{{ price1 }}</div>
+            <div class="stock-data">{{ change1 }}</div>
+            <div class="stock-data">{{ percent1 }}</div>
+        </div>
+
+        <div class="stock-grid">
+            <div class="stock-data">{{ name2 }}</div>
+            <div class="stock-data">{{ Symbol2 }}</div>
+            <div class="stock-data">{{ price2 }}</div>
+            <div class="stock-data">{{ change2 }}</div>
+            <div class="stock-data">{{ percent2 }}</div>
+        </div>
+
+        <div class="stock-grid">
+            <div class="stock-data">{{ name3 }}</div>
+            <div class="stock-data">{{ Symbol3 }}</div>
+            <div class="stock-data">{{ price3 }}</div>
+            <div class="stock-data">{{ change3 }}</div>
+            <div class="stock-data">{{ percent3 }}</div>
+        </div>
+
+        <h1 class="heading1">Trending Stocks</h1>
+        <div class="grid-container">
+            <div class="grid-item">Name</div>
+            <div class="grid-item">Symbol</div>
+            <div class="grid-item">Price</div>
+            <div class="grid-item">Change</div>
+            <div class="grid-item">Percentage Change</div>
+        </div>
+
+        <div class="stock-grid">
+            <div class="stock-data">{{ name4 }}</div>
+            <div class="stock-data">{{ Symbol4 }}</div>
+            <div class="stock-data">{{ price4 }}</div>
+            <div class="stock-data">{{ change4 }}</div>
+            <div class="stock-data">{{ percent4 }}</div>
+        </div>
+
+        <div class="stock-grid">
+            <div class="stock-data">{{ name5 }}</div>
+            <div class="stock-data">{{ Symbol5 }}</div>
+            <div class="stock-data">{{ price5 }}</div>
+            <div class="stock-data">{{ change5 }}</div>
+            <div class="stock-data">{{ percent5 }}</div>
+        </div>
+
+        <div class="stock-grid">
+            <div class="stock-data">{{ name6 }}</div>
+            <div class="stock-data">{{ Symbol6 }}</div>
+            <div class="stock-data">{{ price6 }}</div>
+            <div class="stock-data">{{ change6 }}</div>
+            <div class="stock-data">{{ percent6 }}</div>
+        </div>
+
+        <div class="stock-grid">
+            <div class="stock-data">{{ name7 }}</div>
+            <div class="stock-data">{{ Symbol7 }}</div>
+            <div class="stock-data">{{ price7 }}</div>
+            <div class="stock-data">{{ change7 }}</div>
+            <div class="stock-data">{{ percent7 }}</div>
+        </div>
+
+        <div class="stock-grid">
+            <div class="stock-data">{{ name8 }}</div>
+            <div class="stock-data">{{ Symbol8 }}</div>
+            <div class="stock-data">{{ price8 }}</div>
+            <div class="stock-data">{{ change8 }}</div>
+            <div class="stock-data">{{ percent8 }}</div>
+        </div>
+
+    </div>
+
+    <footer>
+        <h1 id="footer-text">A Django Project</h1>
+    </footer>
+
+    {% endblock %}
+    
+</body>
+</html>

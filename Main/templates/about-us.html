@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}"/>
+</head>
+<body>
+    {% block content %}
+    <div class="main-container">
+        <header>
+            <h1 id="logo">PredictATrade</h1>
+            <ul id="navigation">
+                <li><a href="{% url 'main_render' %}" id="list-item">Home</a></li>
+                <li><a href="{% url 'stocks_render' %}" id="list-item">Stocks</a></li>
+                <li><a href="{% url 'about_us_render' %}" id="list-item">About Us</a></li>
+                <li><button class="cta"><a href="{% url 'hire_a_broker' %}">Hire A Broker</a></button></li>
+            </ul>
+            </header>
+        </div>
+
+        {% endblock %}
+</body>
+</html>

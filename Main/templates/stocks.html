@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stocks</title>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}"/>
+</head>
+<body>
+    {% block content %}
+    <div class="main-container">
+        <header>
+            <h1 id="logo">PredictATrade</h1>
+            <ul id="navigation">
+                <li><a href="{% url 'main_render' %}" id="list-item">Home</a></li>
+                <li><a href="{% url 'stocks_render' %}" id="curr">Stocks</a></li>
+                <li><a href="{% url 'about_us_render' %}" id="list-item">About Us</a></li>
+                <li><button class="cta"><a href="{% url 'hire_a_broker' %}">Hire A Broker</a></button></li>
+                </ul>
+        </header>
+
+        <h1 class="heading1">Stocks & Cryptocurrencies</h1>
+        <h6 class="sub-heading">Select A Ticker From The List Given Below.</h6>
+
+        <div class="grid-container-stock">
+            <div class="grid-item">Name</div>
+            <div class="grid-item">Symbol</div>
+            <div class="grid-item">Price</div>
+        </div>
+
+        <div class="stock-grid-stock">
+            <div class="stock-data"><a href="{% url 'bitcoin_render' %}">{{ name1 }}</a></div>
+            <div class="stock-data">{{ Symbol1 }}</div>
+            <div class="stock-data">{{ price1 }}</div>
+        </div>
+
+        <div class="stock-grid-stock">
+            <div class="stock-data"><a href="{% url 'ethereum_render' %}">{{ name2 }}</a></div>
+            <div class="stock-data">{{ Symbol2 }}</div>
+            <div class="stock-data">{{ price2 }}</div>
+        </div>
+
+        <div class="stock-grid-stock">
+            <div class="stock-data"><a href="{% url 'bnb_render' %}">{{ name3 }}</a></div>
+            <div class="stock-data">{{ Symbol3 }}</div>
+            <div class="stock-data">{{ price3 }}</div>
+        </div>
+
+        <div class="stock-grid-stock">
+            <div class="stock-data"><a href="">{{ name4 }}</a></div>
+            <div class="stock-data">{{ Symbol4 }}</div>
+            <div class="stock-data">{{ price4 }}</div>
+        </div>
+
+        <div class="stock-grid-stock">
+            <div class="stock-data"><a href="">{{ name5 }}</a></div>
+            <div class="stock-data">{{ Symbol5 }}</div>
+            <div class="stock-data">{{ price5 }}</div>
+        </div>
+
+        <div class="stock-grid-stock">
+            <div class="stock-data"><a href="">{{ name6 }}</a></div>
+            <div class="stock-data">{{ Symbol6 }}</div>
+            <div class="stock-data">{{ price6 }}</div>
+        </div>
+
+        <div class="stock-grid-stock">
+            <div class="stock-data"><a href="">{{ name7 }}</a></div>
+            <div class="stock-data">{{ Symbol7 }}</div>
+            <div class="stock-data">{{ price7 }}</div>
+        </div>
+
+        <div class="stock-grid-stock">
+            <div class="stock-data"><a href="">{{ name8 }}</a></div>
+            <div class="stock-data">{{ Symbol8 }}</div>
+            <div class="stock-data">{{ price8 }}</div>
+        </div>
+
+        <div class="stock-grid-stock">
+            <div class="stock-data"><a href="">{{ name9 }}</a></div>
+            <div class="stock-data">{{ Symbol9 }}</div>
+            <div class="stock-data">{{ price9 }}</div>
+        </div>
+
+        <div class="stock-grid-stock">
+            <div class="stock-data"><a href="">{{ name10 }}</a></div>
+            <div class="stock-data">{{ Symbol10 }}</div>
+            <div class="stock-data">{{ price10 }}</div>
+        </div>
+
+    </div>
+
+    <footer>
+        <h1 id="footer-text">A Django Project</h1>
+    </footer>
+    {% endblock %}
+</body>

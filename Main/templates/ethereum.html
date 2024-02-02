@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethereum (ETH-USD)</title>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}"/>
+</head>
+<body>
+    {% block content %}
+    <div class="main-container">
+        <header>
+            <h1 id="logo">PredictATrade</h1>
+            <ul id="navigation">
+                <li><a href="{% url 'main_render' %}" id="list-item">Home</a></li>
+                <li><a href="{% url 'stocks_render' %}" id="list-item">Stocks</a></li>
+                <li><a href="{% url 'about_us_render' %}" id="list-item">About Us</a></li>
+                <li><button class="cta"><a href="{% url 'hire_a_broker' %}">Hire A Broker</a></button></li>
+                </ul>
+        </header>
+
+        <h1 class="heading1">Ethereum (ETH-USD)</h1>
+        <h6 class="sub-heading">FROM: '2014-01-01' ~ TO: '2024-01-01'</h6>
+
+        <div class="table-container">
+        {{ df_html|safe }}
+        </div>
+
+        <style>
+            /* Embedded CSS styles for the table */
+            .table-container {
+                font-family: JetBrains Mono;
+                margin: 20px;
+                overflow-x: auto;
+                color: #44D62C;
+            }
+        
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 20px;
+                font-size: 16px;
+            }
+        
+            th, td {
+                padding: 12px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+        </style>
+
+        <h6 class="sub-heading" style="justify-content: center; align-items: center; display: flex; font-size: 25px;">Candlestick Plot</h6>
+
+        <div id="bitcoin-candlestick" style="height: 700px; padding-top: 40px; margin-bottom: 70px;"></div>
+        <script>
+            // Parse the JSON data and create the Plotly candlestick chart
+            var chartData = {{ chart_json|safe }};
+            Plotly.newPlot('bitcoin-candlestick', chartData);
+        </script>
+
+        <h6 class="sub-heading" style="justify-content: center; align-items: center; display: flex; font-size: 25px; padding-bottom: 22px;">Ethereum Price Prediction using MLRegressor</h6>
+
+        <div id="bitcoin-prediction-chart" style="height: 700px; padding-top: 35px; margin-bottom: 70px;"></div>
+        <script>
+            // Parse the JSON data and create the Plotly line chart
+            var chartData = {{ prediction_chart_json|safe }};
+            Plotly.newPlot('bitcoin-prediction-chart', chartData);
+        </script>
+
+    </div>
+
+    <footer>
+        <h1 id="footer-text">A Django Project</h1>
+    </footer>
+    {% endblock %}
+</body>
